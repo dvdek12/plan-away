@@ -1,8 +1,11 @@
 // import { useState } from "react";
 import Button from "@mui/material/Button";
 import DeleteIcon from "@mui/icons-material/Delete";
+import { useNavigate } from "react-router-dom";
 
-export const TripCard = ({ id, name, coverPhoto, onRemoveTripByID }) => {
+export const TripCard = ({ id, name, coverPhoto, slug, onRemoveTripByID }) => {
+  const navigate = useNavigate();
+
   return (
     <>
       <div className="bg-gray-800 rounded-md">
@@ -13,7 +16,7 @@ export const TripCard = ({ id, name, coverPhoto, onRemoveTripByID }) => {
         <div className="px-6 py-3 flex flex-col space-y-2">
           <h2 className="text-xl text-white  uppercase py-2">{name}</h2>
           <div className="inline-flex space-x-3 justify-center">
-            <Button onClick={() => {}} variant="outlined">
+            <Button onClick={() => navigate(`/${slug}`)} variant="outlined">
               See Details
             </Button>
             <Button

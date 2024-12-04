@@ -1,0 +1,33 @@
+{
+  "TRIPS": [
+    {
+      "id": 1,
+      "name": "Across the Europe",
+      "destination": "Barcelona",
+      "startDate": "16.03.2024",
+      "endDate": "26.03.2024",
+      "milestones": ["Frankfurt", "Neapol"],
+      "equipment": ["map", "photo camera", "4 x spray"],
+      "coverPhoto": "https://media.timeout.com/images/106185654/750/562/image.jpg",
+      "slug": "across-the-europe"
+    },
+    {
+      "id": 2,
+      "name": "Through the Asian Steps",
+      "destination": "Hongkong",
+      "startDate": "15.07.2026",
+      "endDate": "20.07.2026",
+      "milestones": ["Taipei", "Neapol"],
+      "equipment": [
+        "map",
+        "photo camera",
+        "4 x spray",
+        "backpack",
+        "light",
+        "bottle water"
+      ],
+      "coverPhoto": "https://media.cnn.com/api/v1/images/stellar/prod/190823001700-14-asia-beautiful-town.jpg?q=w_1600,h_900,x_0,y_0,c_fill",
+      "slug": "through-the-asian-steps"
+    }
+  ]
+}
