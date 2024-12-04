@@ -1,8 +1,11 @@
 // import { useState } from 'react'
 // import reactLogo from './assets/react.svg'
 // import viteLogo from '/vite.svg'
+import { useState } from "react";
 import "./App.css";
 import { TripCard } from "./components/TripCard";
+import { Button } from "@mui/material";
+import AddBoxIcon from "@mui/icons-material/AddBox";
 // import Button from "@mui/material/Button";
 
 const TRIPS = [
@@ -37,26 +40,41 @@ const TRIPS = [
 ];
 
 function App() {
+  const [trips, setTrips] = useState(TRIPS);
+
+  const removeTripByID = (id) => {
+    const tripsWithRemoved = trips.filter((t) => t.id !== id);
+
+    setTrips(tripsWithRemoved);
+  };
+
   return (
     <>
       <p>Your trips</p>
       <div className="flex space-x-6">
-        {TRIPS.length > 0 ? (
-          TRIPS.map((trip) => (
+        {trips.length > 0 ? (
+          trips.map((trip) => (
             <TripCard
               key={trip.id}
               id={trip.id}
               name={trip.name}
-              destination={trip.destination}
-              startDate={trip.startDate}
-              endDate={trip.endDate}
-              milestones={trip.milestones}
-              equipment={trip.equipment}
               coverPhoto={trip.coverPhoto}
+              onRemoveTripByID={removeTripByID}
             />
           ))
         ) : (
-          <h2 className="text-xl">Sorry you have no planned trips! :(</h2>
+          <div className="flex flex-col space-y-2">
+            <h2 className="text-xl text-white ">
+              Sorry you have no planned trips! :(
+            </h2>
+            <Button
+              onClick={() => {}}
+              variant="contained"
+              endIcon={<AddBoxIcon />}
+            >
+              Add New Trip
+            </Button>
+          </div>
         )}
       </div>
     </>
